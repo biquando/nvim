@@ -8,4 +8,8 @@ nvim_tree.setup {
   filesystem_watchers = {
     enable = true,
   },
+  git = {
+    enable = true,
+    ignore = false,
+  }
 }

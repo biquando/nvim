@@ -35,14 +35,15 @@ See `lua/user/lsp/mason.lua` for a list of configured language servers.
 | `<Leader>f` | Find file                  |
 | `<Leader>g` | Grep for text in all files |
 
-| LSP  |                      |
-| ---- | -------------------- |
-| `gD` | Go to declaration    |
-| `gd` | Go to definition     |
-| `gi` | Go to implementation |
-| `gr` | Go to references     |
-| `K`  | Hover                |
-| `gl` | Open LSP diagnostic  |
+| LSP         |                      |
+| ----------- | -------------------- |
+| `gD`        | Go to declaration    |
+| `gd`        | Go to definition     |
+| `gi`        | Go to implementation |
+| `gr`        | Go to references     |
+| `K`         | Hover                |
+| `gl`        | Open LSP diagnostic  |
+| `<Leader>r` | Rename symbol        |
 
 | Git         |                |
 | ----------- | -------------- |
