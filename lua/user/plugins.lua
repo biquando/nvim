@@ -100,6 +100,7 @@ return packer.startup(function(use)
   use "rust-lang/rust.vim"
   use { "akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end }
   use { "lewis6991/impatient.nvim", config = function() require("impatient") end }
+  use "ARM9/arm-syntax-vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

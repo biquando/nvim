@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd("FileType", {
     if ft == "lua" then
       fn.set_tab_width(2)
       fn.use_spaces()
+    elseif ft == "fish" then
+      fn.set_tab_width(4)
+      fn.use_spaces()
     elseif ft == "markdown" then
       fn.set_tab_width(2)
       vim.opt.textwidth = 80
