@@ -42,3 +42,13 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     vim.opt.filetype = "c"
   end
 })
+
+-- Associate .s with arm instead of asm on Darwin
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = { "*.s" },
+  callback = function()
+    if vim.loop.os_uname().sysname == "Darwin" then
+      vim.opt.filetype = "arm"
+    end
+  end
+})
