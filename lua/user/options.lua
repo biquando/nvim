@@ -1,6 +1,5 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
--- NOTE: You can change these options as you wish!
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -46,3 +45,16 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.o.scrolloff = 8
+
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = -1  -- set equal to shiftwidth
+vim.opt.expandtab = true
+
+vim.opt.colorcolumn = '81,101'
+vim.opt.display = "lastline,msgsep,uhex"
+vim.opt.list = true
+vim.opt.listchars = { tab = "  ", trail = "~", nbsp = "+" }
+
+vim.opt.whichwrap = "<,>,[,]"
+vim.opt.wrap = true
