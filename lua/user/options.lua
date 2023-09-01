@@ -1,48 +1,48 @@
-local options = {
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 1,                           -- more space in command line to display messages
-  colorcolumn = { 81, 101 },
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  conceallevel = 0,                        -- so that `` is visible in markdown files
-  cursorline = true,                       -- highlight the current line
-  cursorlineopt = "number",                -- only highlight the current line number
-  display = "lastline,msgsep,uhex",
-  expandtab = false,                       -- don't convert tabs to spaces
-  fileencoding = "utf-8",
-  guifont = "monospace:h17",
-  hlsearch = true,
-  ignorecase = true,
-  list = true,                             -- show trailing spaces
-  listchars = { tab = "  ", trail = "~", nbsp = "+" },
-  mouse = "a",
-  number = true,                           -- show line numbers
-  pumheight = 10,                          -- pop up menu height
-  scrolloff = 8,                           -- start scrolling when 8 lines from the top/bottom
-  shiftwidth = 8,                          -- number of spaces inserted for each indentation
-  showmode = false,                        -- don't show things like -- INSERT --
-  showtabline = 2,                         -- always show tabs
-  sidescrolloff = 8,                       -- see scrolloff
-  signcolumn = "yes:1",                    -- width of 1
-  smartcase = true,
-  smartindent = true,
-  softtabstop = -1,                        -- set equal to shiftwidth
-  splitbelow = true,
-  splitright = true,
-  swapfile = false,
-  tabstop = 8,
-  textwidth = 0,
-  timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete
-  undofile = true,                         -- persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  wrap = true,
-}
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+-- [[ Setting options ]]
+-- See `:help vim.o`
+-- NOTE: You can change these options as you wish!
 
-vim.opt.shortmess:append "c"
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-vim.cmd "set whichwrap+=<,>,[,]"  -- wrap left/right in normal/insert mode
+-- Set highlight on search
+vim.o.hlsearch = true
 
--- vim.cmd [[set iskeyword+=-]]
--- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- Make line numbers default
+vim.wo.number = true
+
+-- Enable mouse mode
+vim.o.mouse = 'a'
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.o.clipboard = 'unnamedplus'
+
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Save undo history
+vim.o.undofile = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
+vim.o.scrolloff = 8

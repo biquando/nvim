@@ -1,15 +1,12 @@
-require "user.options"
-require "user.functions"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.gitsigns"
-require "user.filetypes"
+-- vim: ts=2 sts=2 sw=2 et
+---@diagnostic disable: missing-fields
+
+require('user.lazy')
+require('user.options')
+require('user.keymaps')
+require('user.autocmd')
+
+require('plugins.telescope')
+require('plugins.treesitter')
+require('plugins.lsp')
+require('plugins.cmp')
