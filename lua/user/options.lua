@@ -58,3 +58,5 @@ vim.opt.listchars = { tab = "  ", trail = "~", nbsp = "+" }
 
 vim.opt.whichwrap = "<,>,[,]"
 vim.opt.wrap = true
+
+vim.o.cursorline = true

@@ -1,5 +1,3 @@
--- NOTE: See user.keymaps for additional keymaps
-
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -12,3 +10,19 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+local toggleterm_exists, _ = pcall(require, 'toggleterm')
+if toggleterm_exists then
+  -- Default <C-\> (float)
+  vim.keymap.set({ 'n', 'i', }, '<C-\\>', ':ToggleTerm direction=float<CR>')
+  vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>:ToggleTerm direction=float<CR>')
+  -- Float
+  vim.keymap.set({ 'n', 'i', }, '<M-3>', ':ToggleTerm direction=float<CR>')
+  vim.keymap.set('t', '<M-3>', '<C-\\><C-n>:ToggleTerm direction=float<CR>')
+  -- Horizontal
+  vim.keymap.set({ 'n', 'i', }, '<M-1>', ':ToggleTerm direction=horizontal<CR>')
+  vim.keymap.set('t', '<M-1>', '<C-\\><C-n>:ToggleTerm direction=horizontal<CR>')
+  -- Vertical
+  vim.keymap.set({ 'n', 'i', }, '<M-2>', ':ToggleTerm direction=vertical<CR>')
+  vim.keymap.set('t', '<M-2>', '<C-\\><C-n>:ToggleTerm direction=vertical<CR>')
+end
