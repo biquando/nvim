@@ -3,7 +3,8 @@
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will
+--        be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -52,11 +53,11 @@ vim.opt.softtabstop = -1  -- set equal to shiftwidth
 vim.opt.expandtab = true
 
 vim.opt.colorcolumn = '81,101'
-vim.opt.display = "lastline,msgsep,uhex"
+vim.opt.display = 'lastline,msgsep,uhex'
 vim.opt.list = true
-vim.opt.listchars = { tab = "  ", trail = "~", nbsp = "+" }
+vim.opt.listchars = { tab = '  ', trail = '~', nbsp = '+' }
 
-vim.opt.whichwrap = "<,>,[,]"
+vim.opt.whichwrap = '<,>,[,]'
 vim.opt.wrap = true
 
 vim.o.cursorline = true

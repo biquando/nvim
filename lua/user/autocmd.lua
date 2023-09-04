@@ -1,6 +1,9 @@
 -- SECTION: Highlight on yank
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+local highlight_group = vim.api.nvim_create_augroup(
+  'YankHighlight',
+  { clear = true }
+)
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
@@ -12,28 +15,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- SECTION: Filetypes
 
 -- Associate .h with C instead of C++
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = { "*.h" },
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = { '*.h' },
   callback = function(args)
-    vim.bo[args.buf].filetype = "c"
+    vim.bo[args.buf].filetype = 'c'
   end
 })
 
 -- Associate .s with arm64 instead of asm on Darwin
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = { "*.s" },
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = { '*.s' },
   callback = function(args)
-    if vim.loop.os_uname().sysname == "Darwin" then
-      vim.bo[args.buf].filetype = "arm64"
+    if vim.loop.os_uname().sysname == 'Darwin' then
+      vim.bo[args.buf].filetype = 'arm64'
     end
   end
 })
 
 -- Associate .lasm with lasm
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-  pattern = { "*.lasm" },
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  pattern = { '*.lasm' },
   callback = function(args)
-    vim.bo[args.buf].filetype = "lasm"
+    vim.bo[args.buf].filetype = 'lasm'
   end
 })
 
@@ -56,13 +59,13 @@ local ft_indents = {
   tex      = { 4, true },
 }
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "*" },
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
   callback = function(args)
     local buf = vim.bo[args.buf]
     local ft = buf.filetype
 
-    SET_INDENT(buf, ft_indents["DEFAULT"][1], ft_indents["DEFAULT"][2], false)
+    SET_INDENT(buf, ft_indents['DEFAULT'][1], ft_indents['DEFAULT'][2], false)
     for lang, indenting in pairs(ft_indents) do
       if ft == lang then
         SET_INDENT(buf, indenting[1], indenting[2], false)

@@ -39,8 +39,8 @@ SET_INDENT = function(buf_opts, w, et, should_retab)
 end
 
 
-vim.api.nvim_create_user_command("SP",
+vim.api.nvim_create_user_command('SP',
   [[lua SET_INDENT(vim.opt, <f-args>, true, true)]], { nargs = 1 })
 
-vim.api.nvim_create_user_command("TS",
+vim.api.nvim_create_user_command('TS',
   [[lua SET_INDENT(vim.opt, <f-args>, false, true)]], { nargs = 1 })

@@ -67,9 +67,18 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', 'gh', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to Previous [h]unk' })
-        vim.keymap.set('n', 'gH', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to Next [H]unk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', 'gh', require('gitsigns').prev_hunk, {
+          buffer = bufnr,
+          desc = '[G]o to Previous [h]unk'
+        })
+        vim.keymap.set('n', 'gH', require('gitsigns').next_hunk, {
+          buffer = bufnr,
+          desc = '[G]o to Next [H]unk'
+        })
+        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, {
+          buffer = bufnr,
+          desc = '[P]review [H]unk'
+        })
       end,
     },
   },
@@ -161,9 +170,9 @@ require('lazy').setup({
     'akinsho/toggleterm.nvim',
     opts = {
       size = function(term)
-        if term.direction == "horizontal" then
+        if term.direction == 'horizontal' then
           return 15
-        elseif term.direction == "vertical" then
+        elseif term.direction == 'vertical' then
           return vim.o.columns * 0.4
         else
           return 20
@@ -174,4 +183,11 @@ require('lazy').setup({
       persist_mode = false,
     },
   },
+
+  -- SECTION: Autopairs
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {}
+  }
 }, {})
