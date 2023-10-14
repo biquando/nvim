@@ -9,6 +9,7 @@ require('nvim-treesitter.configs').setup {
     'cpp',
     'fish',
     'go',
+    'haskell',
     'lua',
     'python',
     'rust',

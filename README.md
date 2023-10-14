@@ -24,4 +24,5 @@
 | `gd`         | [g]oto [d]efinition             |
 | `gr`         | [g]oto [r]eferences (telescope) |
 | `gI`         | [g]oto [I]mplementation         |
+| `gl`         | Open diagnostic                 |
 | `<Leader>ds` | [d]ocument [s]ymbols            |
