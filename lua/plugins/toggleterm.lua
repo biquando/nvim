@@ -14,7 +14,7 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 local toggleterm_exists, _ = pcall(require, 'toggleterm')
 if toggleterm_exists then
   -- Default <C-\> (float)
-  vim.keymap.set({ 'n', 'i', }, '<C-\\>', ':ToggleTerm direction=float<CR>')
+  vim.keymap.set({ 'n' }, '<C-\\>', ':ToggleTerm direction=float<CR>')
   vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>:ToggleTerm direction=float<CR>')
   -- Float
   vim.keymap.set({ 'n', 'i', }, '<M-3>', ':ToggleTerm direction=float<CR>')

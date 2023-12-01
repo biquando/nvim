@@ -49,6 +49,7 @@ local ft_indents = {
   c        = { 4, true },
   cpp      = { 4, true },
   fish     = { 4, true },
+  haskell  = { 2, true },
   json     = { 2, true },
   lua      = { 2, true },
   make     = { 8, false },
