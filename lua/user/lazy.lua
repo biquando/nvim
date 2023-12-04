@@ -22,6 +22,7 @@ require('lazy').setup({
   'lukas-reineke/indent-blankline.nvim',
   'tpope/vim-surround',
   { 'NMAC427/guess-indent.nvim', config = true },
+  'preservim/nerdtree',
 
   -- SECTION: LSP
   {
