@@ -15,4 +15,7 @@ vim.keymap.set({ 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",
 vim.keymap.set('i', '<C-f>', '<Right>')
 vim.keymap.set('i', '<C-b>', '<Left>')
 
+-- Toggle file tree
+vim.keymap.set('n', '<Leader>e', ':NERDTreeToggle<CR>')
+
 -- NOTE: See plugins.toggleterm for terminal keymaps

@@ -26,3 +26,7 @@
 | `gI`         | [g]oto [I]mplementation         |
 | `gl`         | Open diagnostic                 |
 | `<Leader>ds` | [d]ocument [s]ymbols            |
+
+| Other       |                 |
+| ----------- | --------------- |
+| `<Leader>e` | Toggle NERDTree |
