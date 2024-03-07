@@ -22,7 +22,6 @@ require('lazy').setup({
   'lukas-reineke/indent-blankline.nvim',
   'tpope/vim-surround',
   { 'NMAC427/guess-indent.nvim', config = true },
-  'preservim/nerdtree',
 
   -- SECTION: LSP
   {
@@ -202,6 +201,14 @@ require('lazy').setup({
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     opts = {}
+  },
+
+  -- SECTION: NERDTree
+  {
+    'preservim/nerdtree',
+    config = function()
+      vim.g.NERDTreeShowHidden=1
+    end,
   },
 
   -- SECTION: Harpoon
