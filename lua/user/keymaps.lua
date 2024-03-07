@@ -19,3 +19,5 @@ vim.keymap.set('i', '<C-b>', '<Left>')
 vim.keymap.set('n', '<Leader>e', ':NERDTreeToggle<CR>')
 
 -- NOTE: See plugins.toggleterm for terminal keymaps
+
+-- NOTE: See plugins.harpoon for harpoon keymaps

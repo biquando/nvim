@@ -194,20 +194,7 @@ require('lazy').setup({
   -- SECTION: Toggleterm
   {
     'akinsho/toggleterm.nvim',
-    opts = {
-      size = function(term)
-        if term.direction == 'horizontal' then
-          return 15
-        elseif term.direction == 'vertical' then
-          return vim.o.columns * 0.4
-        else
-          return 20
-        end
-      end,
-      -- open_mapping = [[<c-\>]],
-      -- direction = 'float',
-      persist_mode = false,
-    },
+    -- See plugins/toggleterm.lua
   },
 
   -- SECTION: Autopairs
@@ -215,5 +202,11 @@ require('lazy').setup({
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     opts = {}
-  }
+  },
+
+  -- SECTION: Harpoon
+  {
+    'ThePrimeagen/harpoon',
+    -- See plugins/harppon.lua
+  },
 }, {})

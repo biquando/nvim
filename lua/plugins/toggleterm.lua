@@ -11,8 +11,27 @@ end
 -- for only toggle term, use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
-local toggleterm_exists, _ = pcall(require, 'toggleterm')
+local toggleterm_exists, toggleterm = pcall(require, 'toggleterm')
 if toggleterm_exists then
+
+  -- SECTION: Options
+  toggleterm.setup({
+      size = function(term)
+        if term.direction == 'horizontal' then
+          return 15
+        elseif term.direction == 'vertical' then
+          return vim.o.columns * 0.4
+        else
+          return 20
+        end
+      end,
+      -- open_mapping = [[<c-\>]],
+      -- direction = 'float',
+      persist_mode = false,
+  })
+
+  -- SECTION: Keymaps
+  --
   -- Default <C-\> (float)
   vim.keymap.set({ 'n' }, '<C-\\>', ':ToggleTerm direction=float<CR>')
   vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>:ToggleTerm direction=float<CR>')
