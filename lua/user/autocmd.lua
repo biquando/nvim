@@ -14,8 +14,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- SECTION: Filetypes
 
+local ft_group = vim.api.nvim_create_augroup('filetypes', { clear = true })
+
 -- Associate .h with C instead of C++
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  group = ft_group,
   pattern = { '*.h' },
   callback = function(args)
     vim.bo[args.buf].filetype = 'c'
@@ -24,6 +27,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 
 -- Associate .s with arm64 instead of asm on Darwin
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  group = ft_group,
   pattern = { '*.s' },
   callback = function(args)
     if vim.loop.os_uname().sysname == 'Darwin' then
@@ -34,6 +38,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 
 -- Associate .lasm with lasm
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+  group = ft_group,
   pattern = { '*.lasm' },
   callback = function(args)
     vim.bo[args.buf].filetype = 'lasm'
@@ -60,7 +65,10 @@ local ft_indents = {
   tex      = { 4, true },
 }
 
+-- TODO: Make this better. Probably don't need to loop over everything because
+-- ft_indents is a table that we can index by filetype!!!
 vim.api.nvim_create_autocmd('FileType', {
+  group = ft_group,
   pattern = { '*' },
   callback = function(args)
     local buf = vim.bo[args.buf]
