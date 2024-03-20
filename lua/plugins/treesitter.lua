@@ -12,6 +12,7 @@ require('nvim-treesitter.configs').setup {
     'haskell',
     'javascript',
     'lua',
+    'markdown',
     'python',
     'rust',
     'tsx',

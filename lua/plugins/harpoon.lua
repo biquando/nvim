@@ -10,27 +10,17 @@ if harpoon_exists then
 
   -- SECTION: Keymaps
 
-  vim.keymap.set({'n'}, '<Leader>a',
-    function()
-      require('harpoon.mark').add_file()
-    end
-  )
+  local mark = require('harpoon.mark')
+  local ui = require('harpoon.ui')
 
-  vim.keymap.set({'n'}, '<Leader>l',
-    function()
-      require('harpoon.ui').toggle_quick_menu()
-    end
-  )
+  vim.keymap.set('n', '<leader>a', mark.add_file)
+  vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
 
-  vim.keymap.set({'n'}, '<S-h>',
-    function()
-      require('harpoon.ui').nav_prev()
-    end
-  )
+  vim.keymap.set('n', '<C-h>', function() ui.nav_file(1) end)
+  vim.keymap.set('n', '<C-j>', function() ui.nav_file(2) end)
+  vim.keymap.set('n', '<C-k>', function() ui.nav_file(3) end)
+  vim.keymap.set('n', '<C-l>', function() ui.nav_file(4) end)
 
-  vim.keymap.set({'n'}, '<S-l>',
-    function()
-      require('harpoon.ui').nav_next()
-    end
-  )
+  vim.keymap.set('n', '<S-h>', function() ui.nav_prev() end)
+  vim.keymap.set('n', '<S-l>', function() ui.nav_next() end)
 end
