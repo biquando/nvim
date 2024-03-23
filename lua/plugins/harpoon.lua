@@ -23,19 +23,19 @@ if harpoon_exists then
     mark.add_file()
     vim.cmd('redrawtabline')
   end)
-  vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
+  vim.keymap.set({'n', 't'}, '<C-e>', ui.toggle_quick_menu)
 
   -- Goto file
-  vim.keymap.set('n', '<C-h>', function() ui.nav_file(1) end)
-  vim.keymap.set('n', '<C-j>', function() ui.nav_file(2) end)
-  vim.keymap.set('n', '<C-k>', function() ui.nav_file(3) end)
-  vim.keymap.set('n', '<C-l>', function() ui.nav_file(4) end)
+  vim.keymap.set({'n', 't'}, '<C-h>', function() ui.nav_file(1) end)
+  vim.keymap.set({'n', 't'}, '<C-j>', function() ui.nav_file(2) end)
+  vim.keymap.set({'n', 't'}, '<C-k>', function() ui.nav_file(3) end)
+  vim.keymap.set({'n', 't'}, '<C-l>', function() ui.nav_file(4) end)
 
   -- Left / right
   vim.keymap.set('n', '<S-h>', function() ui.nav_prev() end)
   vim.keymap.set('n', '<S-l>', function() ui.nav_next() end)
 
   -- Terminals
-  vim.keymap.set('n', '<C-n>', function() term.gotoTerminal(1) end)
-  vim.keymap.set('n', '<C-m>', function() term.gotoTerminal(2) end)
+  vim.keymap.set({'n', 't'}, '<C-n>', function() term.gotoTerminal(1) end)
+  vim.keymap.set({'n', 't'}, '<C-m>', function() term.gotoTerminal(2) end)
 end
