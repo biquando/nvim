@@ -27,6 +27,17 @@
 | `gl`         | Open diagnostic                 |
 | `<Leader>ds` | [d]ocument [s]ymbols            |
 
+| Harpoon     |             |
+| ----------- | ----------- |
+| `<Leader>a` | Add to list |
+| `<C-e>`     | Show list   |
+| `<C-h>`     | Item 1      |
+| `<C-j>`     | Item 2      |
+| `<C-k>`     | Item 3      |
+| `<C-l>`     | Item 4      |
+| `<C-n>`     | Terminal 1  |
+| `<C-m>`     | Terminal 2  |
+
 | Other       |                 |
 | ----------- | --------------- |
 | `<Leader>e` | Toggle NERDTree |
