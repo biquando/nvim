@@ -9,7 +9,7 @@ if harpoon_exists then
     tabline = true,
   })
 
--- need to call this because tabline messes with the colors
+  -- need to call this because tabline messes with the colors
   require('user.colors').set_colors()
 
   -- SECTION: Keymaps
@@ -36,6 +36,7 @@ if harpoon_exists then
   vim.keymap.set('n', '<S-l>', function() ui.nav_next() end)
 
   -- Terminals
-  vim.keymap.set({'n', 't'}, '<C-n>', function() term.gotoTerminal(1) end)
-  vim.keymap.set({'n', 't'}, '<C-m>', function() term.gotoTerminal(2) end)
+  vim.keymap.set('n', '<C-n>', function() term.gotoTerminal(1) end)
+  vim.keymap.set('n', '<C-m>', function() term.gotoTerminal(2) end)
+
 end
