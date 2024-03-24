@@ -16,7 +16,7 @@ vim.keymap.set('i', '<C-f>', '<Right>')
 vim.keymap.set('i', '<C-b>', '<Left>')
 
 -- Toggle file tree
-vim.keymap.set('n', '<Leader>e', ':NERDTreeToggle<CR>')
+vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>')
 
 -- Keep selection on indent
 vim.keymap.set('v', '<', '<gv')

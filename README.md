@@ -4,33 +4,35 @@
 | ------------ | ---------------------- |
 | `gh`         | [g]oto next [H]unk     |
 | `gH`         | [g]oto previous [h]unk |
-| `<Leader>ph` | [p]review [h]unk       |
+| `<leader>ph` | [p]review [h]unk       |
+| `:G`         | Open git interface     |
+| `:GB`        | Browse file on GitHub  |
 
 | Telescope         |                        |
 | ----------------- | ---------------------- |
-| `<Leader><Space>` | Buffers                |
-| `<Leader>?`       | Recent files           |
-| `<Leader>/`       | Find in buffer         |
-| `<Leader>gf`      | [g]it [f]iles          |
-| `<Leader>sf`      | [s]earch [f]iles       |
-| `<Leader>sh`      | [s]earch [h]elp        |
-| `<Leader>sg`      | [s]earch [g]rep        |
-| `<Leader>sd`      | [s]earch [d]iagnostics |
+| `<leader><Space>` | Buffers                |
+| `<leader>?`       | Recent files           |
+| `<leader>/`       | Find in buffer         |
+| `<leader>gf`      | [g]it [f]iles          |
+| `<leader>sf`      | [s]earch [f]iles       |
+| `<leader>sh`      | [s]earch [h]elp        |
+| `<leader>sg`      | [s]earch [g]rep        |
+| `<leader>sd`      | [s]earch [d]iagnostics |
 
 | LSP          |                                 |
 | ------------ | ------------------------------- |
-| `<Leader>rn` | [r]e[n]ame                      |
-| `<Leader>ca` | [c]ode [a]ction                 |
+| `<leader>rn` | [r]e[n]ame                      |
+| `<leader>ca` | [c]ode [a]ction                 |
 | `gd`         | [g]oto [d]efinition             |
 | `gr`         | [g]oto [r]eferences (telescope) |
 | `gI`         | [g]oto [I]mplementation         |
 | `gl`         | Open diagnostic                 |
-| `<Leader>ds` | [d]ocument [s]ymbols            |
+| `<leader>ds` | [d]ocument [s]ymbols            |
 | `K`          | Hover documentation             |
 
 | Harpoon     |             |
 | ----------- | ----------- |
-| `<Leader>a` | Add to list |
+| `<leader>a` | Add to list |
 | `<C-e>`     | Show list   |
 | `<C-h>`     | Item 1      |
 | `<C-j>`     | Item 2      |
@@ -41,4 +43,4 @@
 
 | Other       |                 |
 | ----------- | --------------- |
-| `<Leader>e` | Toggle NERDTree |
+| `<leader>e` | Toggle NERDTree |

@@ -16,12 +16,11 @@ require('lazy').setup({
   -- SECTION: Simple plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  -- 'tpope/vim-sleuth',
   { 'numToStr/Comment.nvim', config = true },
   { 'folke/which-key.nvim', config = true },
   'lukas-reineke/indent-blankline.nvim',
   'tpope/vim-surround',
-  { 'NMAC427/guess-indent.nvim', config = true },
+  { 'NMAC427/guess-indent.nvim', config = true },  -- alternative: vim-sleuth
 
   -- SECTION: LSP
   {
@@ -43,25 +42,7 @@ require('lazy').setup({
   -- SECTION: Linting
   {
     'mfussenegger/nvim-lint',
-    config = function()
-      local lint = require('lint')
-      lint.linters_by_ft = {
-        python = {'pylint'},
-      }
-
-      local pylint = require('lint').linters.pylint
-      pylint.args = {
-        '-f', 'json', '--disable=import-error'
-      }
-
-      local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-      vim.api.nvim_create_autocmd({'BufEnter', 'BufWritePost', 'InsertLeave'}, {
-        group = lint_augroup,
-        callback = function()
-          lint.try_lint()
-        end,
-      })
-    end,
+    -- See plugins/lint.lua
   },
 
   -- SECTION: Autocompletion
@@ -201,6 +182,6 @@ require('lazy').setup({
   -- SECTION: Harpoon
   {
     'ThePrimeagen/harpoon',
-    -- See plugins/harppon.lua
+    -- See plugins/harpoon.lua
   },
 }, {})
