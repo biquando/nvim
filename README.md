@@ -41,6 +41,6 @@
 | `<C-n>`     | Terminal 1  |
 | `<C-m>`     | Terminal 2  |
 
-| Other       |                 |
-| ----------- | --------------- |
-| `<leader>e` | Toggle NERDTree |
+| Other       |            |
+| ----------- | ---------- |
+| `<leader>e` | Toggle Oil |

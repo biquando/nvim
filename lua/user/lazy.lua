@@ -32,7 +32,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -171,12 +171,11 @@ require('lazy').setup({
     opts = {}
   },
 
-  -- SECTION: NERDTree
+  -- SECTION: Oil
   {
-    'preservim/nerdtree',
-    config = function()
-      vim.g.NERDTreeShowHidden=1
-    end,
+    'stevearc/oil.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- See plugins/oil.lua
   },
 
   -- SECTION: Harpoon
