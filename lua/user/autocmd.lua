@@ -65,8 +65,6 @@ local ft_indents = {
   tex      = { 4, true },
 }
 
--- TODO: Make this better. Probably don't need to loop over everything because
--- ft_indents is a table that we can index by filetype!!!
 vim.api.nvim_create_autocmd('FileType', {
   group = ft_group,
   pattern = { '*' },
@@ -74,12 +72,11 @@ vim.api.nvim_create_autocmd('FileType', {
     local buf = vim.bo[args.buf]
     local ft = buf.filetype
 
-    SET_INDENT(buf, ft_indents['DEFAULT'][1], ft_indents['DEFAULT'][2], false)
-    for lang, indenting in pairs(ft_indents) do
-      if ft == lang then
-        SET_INDENT(buf, indenting[1], indenting[2], false)
-        break
-      end
+    local indentation = ft_indents[ft]
+    if indentation then
+        SET_INDENT(buf, indentation[1], indentation[2], false)
+    else
+        SET_INDENT(buf, ft_indents['DEFAULT'][1], ft_indents['DEFAULT'][2], false)
     end
   end
 })
