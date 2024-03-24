@@ -13,8 +13,8 @@
 | `<leader><Space>` | Buffers                |
 | `<leader>?`       | Recent files           |
 | `<leader>/`       | Find in buffer         |
-| `<leader>gf`      | [g]it [f]iles          |
 | `<leader>sf`      | [s]earch [f]iles       |
+| `<leader>sa`      | [s]earch [a]ll files   |
 | `<leader>sh`      | [s]earch [h]elp        |
 | `<leader>sg`      | [s]earch [g]rep        |
 | `<leader>sd`      | [s]earch [d]iagnostics |

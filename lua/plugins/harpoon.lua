@@ -19,7 +19,7 @@ if harpoon_exists then
   local term = require('harpoon.term')
 
   -- Add / list files
-  vim.keymap.set('n', '<leader>a', function()
+  vim.keymap.set('n', '<C-a>', function()
     mark.add_file()
     vim.cmd('redrawtabline')
   end)

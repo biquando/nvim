@@ -9,6 +9,11 @@ if telescope_exists then
         },
       },
     },
+    pickers = {
+      find_files = {
+        hidden = true,
+      },
+    },
   })
 
   pcall(telescope.load_extension, 'fzf')
@@ -18,8 +23,10 @@ if telescope_exists then
   vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
   vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
 
-  vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
   vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+  vim.keymap.set('n', '<leader>sa', function()
+    builtin.find_files({ no_ignore = true, no_ignore_parent = true })
+  end, { desc = '[S]earch [A]ll files' })
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
   vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
