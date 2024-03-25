@@ -14,13 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   -- SECTION: Simple plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
   { 'numToStr/Comment.nvim', config = true },
   { 'folke/which-key.nvim', config = true },
   'lukas-reineke/indent-blankline.nvim',
   'tpope/vim-surround',
   { 'NMAC427/guess-indent.nvim', config = true },  -- alternative: vim-sleuth
+  { 'windwp/nvim-autopairs', config = true },
 
   -- SECTION: LSP
   {
@@ -164,13 +163,6 @@ require('lazy').setup({
     -- See plugins/toggleterm.lua
   },
 
-  -- SECTION: Autopairs
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {}
-  },
-
   -- SECTION: Oil
   {
     'stevearc/oil.nvim',
@@ -183,4 +175,20 @@ require('lazy').setup({
     'ThePrimeagen/harpoon',
     -- See plugins/harpoon.lua
   },
+
+  -- SECTION: Fugutive & Rhubarb
+  'tpope/vim-fugitive',
+  {
+    'tpope/vim-rhubarb',
+    config = function()
+      vim.api.nvim_create_user_command(
+        'Browse',
+        function (opts)
+          vim.fn.system({ 'open', opts.fargs[1] })
+        end,
+        { nargs = 1 }
+      )
+    end,
+  },
+
 }, {})
