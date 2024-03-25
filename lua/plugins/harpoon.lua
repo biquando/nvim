@@ -19,7 +19,7 @@ if harpoon_exists then
   local term = require('harpoon.term')
 
   -- Add / list files
-  vim.keymap.set('n', '<C-a>', function()
+  vim.keymap.set('n', '<leader>a', function()
     mark.add_file()
     vim.cmd('redrawtabline')
   end)
@@ -36,7 +36,11 @@ if harpoon_exists then
   vim.keymap.set('n', '<S-l>', function() ui.nav_next() end)
 
   -- Terminals
-  vim.keymap.set('n', '<C-n>', function() term.gotoTerminal(1) end)
-  vim.keymap.set('n', '<C-m>', function() term.gotoTerminal(2) end)
+  local enterTerm = function(id)
+    term.gotoTerminal(id)
+    vim.cmd('startinsert')
+  end
+  vim.keymap.set('n', '<C-n>', function() enterTerm(1) end)
+  vim.keymap.set('n', '<C-m>', function() enterTerm(2) end)
 
 end
