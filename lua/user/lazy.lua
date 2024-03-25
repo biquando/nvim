@@ -16,7 +16,6 @@ require('lazy').setup({
   -- SECTION: Simple plugins
   { 'numToStr/Comment.nvim', config = true },
   { 'folke/which-key.nvim', config = true },
-  'lukas-reineke/indent-blankline.nvim',
   'tpope/vim-surround',
   { 'NMAC427/guess-indent.nvim', config = true },  -- alternative: vim-sleuth
   { 'windwp/nvim-autopairs', config = true },

@@ -2,6 +2,7 @@ local lint_exists, lint = pcall(require, 'lint')
 if lint_exists then
 
   lint.linters_by_ft = {
+    markdown = {'markdownlint'},
     python = {'pylint'},
   }
 
