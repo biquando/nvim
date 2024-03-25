@@ -18,6 +18,7 @@
 | `<leader>sh`      | [s]earch [h]elp        |
 | `<leader>sg`      | [s]earch [g]rep        |
 | `<leader>sd`      | [s]earch [d]iagnostics |
+| `<leader>sw`      | [s]earch [w]ord        |
 
 | LSP          |                                 |
 | ------------ | ------------------------------- |
