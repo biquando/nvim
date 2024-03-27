@@ -1,3 +1,5 @@
+-- TODO: make sure that all required plugins are installed
+
 local on_attach = function(_, bufnr)
   local nmap = function(keys, func, desc)
     if desc then

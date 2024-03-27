@@ -1,3 +1,8 @@
+local treesitter_exists, _ = pcall(require, 'nvim-treesitter')
+if not treesitter_exists then
+  return
+end
+
 -- [[ Configure Treesitter ]]
 ---@diagnostic disable: missing-fields
 -- See `:help nvim-treesitter`
