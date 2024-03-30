@@ -43,4 +43,4 @@ local enterTerm = function(id)
   vim.cmd('startinsert')
 end
 vim.keymap.set('n', '<C-n>', function() enterTerm(1) end)
-vim.keymap.set('n', '<C-m>', function() enterTerm(2) end)
+-- vim.keymap.set('n', '<C-m>', function() enterTerm(2) end)
