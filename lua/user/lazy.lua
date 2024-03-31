@@ -197,11 +197,11 @@ require('lazy').setup({
   },
 
   -- SECTION: Copilot
-  {
-    'github/copilot.vim',
-    config = function()
-      vim.cmd('Copilot disable')
-    end,
-  }
+  -- {
+  --   'github/copilot.vim',
+  --   config = function()
+  --     vim.cmd('Copilot disable')
+  --   end,
+  -- },
 
 }, {})

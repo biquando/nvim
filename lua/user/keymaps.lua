@@ -29,6 +29,31 @@ vim.keymap.set('n', '<A-l>', '>>')
 vim.keymap.set('v', '<A-h>', '<gv')
 vim.keymap.set('v', '<A-l>', '>gv')
 
+-- SECTION: Option keymaps
+
+local settingsLeader = '<C-,>'
+
+vim.keymap.set('n', settingsLeader .. settingsLeader,
+  function() vim.cmd('noh') end,
+  { desc = 'Clear highlight' })
+
+vim.keymap.set('n', settingsLeader .. 'w',
+  function() vim.o.wrap = not vim.o.wrap end,
+  { desc = 'Toggle [w]rap' })
+
+vim.keymap.set('n', settingsLeader .. 'r',
+  function() vim.wo.relativenumber = not vim.wo.relativenumber end,
+  { desc = 'Toggle [r]elative numbers' })
+
+vim.keymap.set('n', settingsLeader .. 'n',
+  function() vim.wo.number = not vim.wo.number end,
+  { desc = 'Toggle line [n]umbers' })
+
+vim.keymap.set('n', settingsLeader .. 'm',
+  function() vim.o.mouse = (vim.o.mouse == 'a') and '' or 'a' end,
+  { desc = 'Toggle [m]ouse' })
+
+
 -- NOTE: See plugins.toggleterm for terminal keymaps
 
 -- NOTE: See plugins.harpoon for harpoon keymaps
