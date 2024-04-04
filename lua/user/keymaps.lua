@@ -53,6 +53,20 @@ vim.keymap.set('n', settingsLeader .. 'm',
   function() vim.o.mouse = (vim.o.mouse == 'a') and '' or 'a' end,
   { desc = 'Toggle [m]ouse' })
 
+vim.keymap.set('n', settingsLeader .. 'd',
+  function()
+    if vim.diagnostic.is_disabled() then
+      vim.diagnostic.enable()
+    else
+      vim.diagnostic.disable()
+    end
+  end,
+  { desc = 'Toggle [d]iagnostics' })
+
+vim.keymap.set('n', settingsLeader .. 'l',
+  require('plugins.lint').toggle_lint,
+  { desc = 'Toggle [l]inting hints' })
+
 
 -- NOTE: See plugins.toggleterm for terminal keymaps
 
