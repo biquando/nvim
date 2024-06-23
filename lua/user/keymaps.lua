@@ -20,14 +20,18 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- Move lines up/down/left/right
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
-vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv')
-vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv')
-vim.keymap.set('n', '<A-h>', '<<')
-vim.keymap.set('n', '<A-l>', '>>')
-vim.keymap.set('v', '<A-h>', '<gv')
-vim.keymap.set('v', '<A-l>', '>gv')
+-- vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
+-- vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
+-- vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv')
+-- vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv')
+-- vim.keymap.set('n', '<A-h>', '<<')
+-- vim.keymap.set('n', '<A-l>', '>>')
+-- vim.keymap.set('v', '<A-h>', '<gv')
+-- vim.keymap.set('v', '<A-l>', '>gv')
+vim.keymap.set('v', '<C-k>', ':m \'<-2<CR>gv=gv')
+vim.keymap.set('v', '<C-j>', ':m \'>+1<CR>gv=gv')
+vim.keymap.set('v', '<C-h>', '<gv')
+vim.keymap.set('v', '<C-l>', '>gv')
 
 -- SECTION: Option keymaps
 
@@ -55,10 +59,10 @@ vim.keymap.set('n', settingsLeader .. 'm',
 
 vim.keymap.set('n', settingsLeader .. 'd',
   function()
-    if vim.diagnostic.is_disabled() then
+    if not vim.diagnostic.is_enabled() then
       vim.diagnostic.enable()
     else
-      vim.diagnostic.disable()
+      vim.diagnostic.enable(false)
     end
   end,
   { desc = 'Toggle [d]iagnostics' })

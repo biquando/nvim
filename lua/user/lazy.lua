@@ -34,6 +34,9 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+
+      -- Java !!!
+      -- 'mfussenegger/nvim-jdtls',
     },
   },
 
@@ -199,9 +202,9 @@ require('lazy').setup({
   -- SECTION: Copilot
   -- {
   --   'github/copilot.vim',
-  --   config = function()
-  --     vim.cmd('Copilot disable')
-  --   end,
+    -- config = function()
+    --   vim.cmd('Copilot disable')
+    -- end,
   -- },
 
 }, {})
